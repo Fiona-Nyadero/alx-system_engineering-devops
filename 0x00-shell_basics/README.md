@@ -2,4 +2,4 @@ pwd -  a script that prints the absolute path name of the current working direct
 ls - a script that displays the contents list of your current directory
 cd - a script that changes the working directory to the user’s home directory
 ls -l - a script that displays directory contents in a long format
-ls -a - a script that displays current directory contents including hidden files
+ls -a -l - a script that displays current directory contents including hidden files long format
