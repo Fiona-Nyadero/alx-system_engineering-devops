@@ -1,1 +1,1 @@
-su -l  - a script that switches the current user
+su - a script that switches the current user
