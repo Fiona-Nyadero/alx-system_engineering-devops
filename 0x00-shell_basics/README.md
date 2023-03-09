@@ -7,3 +7,4 @@ ls -aln - a script that displays current directory Long format user and group ID
 mkdir - a scritpt that creates a directory named my first directory in the /tmp/ directory
 mv - a script to move the file
 rm -r - a script that deletes the directory
+cd - - a script that changes the working directory to the previous one
