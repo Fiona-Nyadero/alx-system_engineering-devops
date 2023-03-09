@@ -10,4 +10,5 @@ rm -r - a script that deletes the directory
 cd - - a script that changes the working directory
 ls -al . .. /boot - a script that lists all files, the parent of the working directory, and the /boot directory
 file - a script that prints the type of the file
-ln -s - a script that creates a symbolic link 
+ln -s - a script that creates a symbolic link
+cp -u *.html .. - a script that copies all the HTML files from the current working directory to the parent of the working directory
