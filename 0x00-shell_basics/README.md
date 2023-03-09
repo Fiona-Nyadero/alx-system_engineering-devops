@@ -8,4 +8,5 @@ mkdir - a scritpt that creates a directory named my first directory in the /tmp/
 mv - a script to move the file
 rm -r - a script that deletes the directory
 cd - - a script that changes the working directory
-ls -al . .. /boot - a script that lists all files, the parent of the working directory, and the /boot directory 
+ls -al . .. /boot - a script that lists all files, the parent of the working directory, and the /boot directory
+file - a script that prints the type of the file 
