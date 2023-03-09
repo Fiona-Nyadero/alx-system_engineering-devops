@@ -6,3 +6,4 @@ ls -a -l - a script that displays current directory contents including hidden fi
 ls -aln - a script that displays current directory Long format user and group IDs displayed numerically and hidden files
 mkdir - a scritpt that creates a directory named my first directory in the /tmp/ directory
 mv - a script to move the file
+rm -r - a script that deletes the directory
