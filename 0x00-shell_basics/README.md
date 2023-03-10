@@ -12,3 +12,10 @@ ls -al . .. /boot - a script that lists all files, the parent of the working dir
 file - a script that prints the type of the file
 ln -s - a script that creates a symbolic link
 cp -u *.html .. - a script that copies all the HTML files from the current working directory to the parent of the working directory
+mv [[:upper:]]* /DIR  - a script that moves all files beginning with an uppercase letter to the directory /DIR
+rm *[~]  - a script that deletes all files in the current working directory that end with the character ~
+mkdir -p  - a script that creates the directories
+ls -amvp  - command that lists ALL the files and directories, separated by commas, directory names should end with a slash, alpha ordered, . and .. listed at the very beginning, only digits and letters to sort; digits should come first
+0 string SCHOOL School data
+!:mime School
+file -C -m FILE  - a script that create a magic file used with the command FILE to detect data files
