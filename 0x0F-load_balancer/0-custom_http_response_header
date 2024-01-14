@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Install Nginx on a ubuntu webserver
+
+# Updates package with superUser priviledges
+# & installs Nginx on Ubuntu
+echo -e "Installing Nginx for you! ;-)\n"
+sudo apt-get update -y
+sudo apt-get install -y nginx
+
+# Starts Nginx &
+# Configure Nginx to listen on port 80
+sudo service nginx start
+
+sudo bash -c 'echo "server {
+    listen	80 default_server;
+    listen	[::]:80 default_server;
+
+    root	/var/www/html;
+    index	index.html index.htm;
+
+    server_name _;
+
+    location / {
+        add_header Content-Type text/html;
+	add_header X-Served-By $HOSTNAME;
+        return 200 \"Hello World!\\n\";
+    }
+}" > /etc/nginx/sites-available/default'
+
+# Restart Nginx
+sudo service nginx restart
