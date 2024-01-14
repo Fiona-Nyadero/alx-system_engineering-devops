@@ -5,9 +5,13 @@
 get_domain_info() {
     subdomain=$1
     dig_output=$(dig "$subdomain.$domain" | grep -A1 'ANSWER SECTION:')
-    record_type=$(echo "$dig_output" | awk '/IN\s/{print $4}')
-    destination=$(echo "$dig_output" | awk '/IN\s/{getline; print $NF}')
-    echo "The subdomain $subdomain is a $record_type record and points to $destination"
+
+    if [ -z "$dig_output" ]; then
+	    echo "Error: Unable to retrieve DNS information for $subdomain"
+    else
+	    record_type=$(echo "$dig_output" | awk '/IN\s/{print $4}')
+	    destination=$(echo "$dig_output" | head -n1)
+	    echo "The subdomain $subdomain is a $record_type record and points to $destination"
 }
 
 # Main
