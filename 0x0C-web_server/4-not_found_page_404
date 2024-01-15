@@ -34,12 +34,13 @@ sudo bash -c 'echo "server {
     }
 
     error_page 404 /404_custom_page.html;
-
     location = /404_custom_page.html {
-        internal;
-	return 404 "Ceci n\''est pas une page\\n\";
+        root /var/www/html;
+	internal;
     }
 }" > /etc/nginx/sites-available/default'
+
+echo "Ceci n'est pas une page\n" > /var/www/html/404_custom_page.html
 
 # Restart Nginx
 sudo service nginx restart
