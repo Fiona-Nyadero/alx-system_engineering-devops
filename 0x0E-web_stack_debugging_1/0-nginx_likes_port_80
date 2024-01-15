@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Install Nginx on a ubuntu webserver
+
+# Updates package with superUser priviledges
+# & installs Nginx on Ubuntu
+echo -e "Installing Nginx for you! ;-)\n"
+sudo apt-get update -y
+sudo apt-get install -y nginx
+
+# Starts Nginx &
+# Configure Nginx to listen on port 80
+sudo service nginx start
