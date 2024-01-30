@@ -54,7 +54,7 @@ def display_todo_progress(employee_name, employee_todo_list):
 
     for task in employee_todo_list:
         if task['completed']:
-            print(f"\t{task['title']}")
+            print(f"\t {task['title']}")
 
 
 if __name__ == "__main__":
