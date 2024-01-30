@@ -4,9 +4,9 @@ Script uses REST API for employee ID
 to return TODO list progress
 """
 
+import csv
 import requests
 import sys
-import csv
 
 
 def fetch_employee_data(employee_id):
@@ -63,7 +63,7 @@ def export_to_csv(employee_id, employee_name, employee_todo_list):
     csvfile = f"{employee_id}.csv"
 
     with open(csvfile, mode='w', newline='') as file:
-        writer = csv.writer(file, quoting=csv.QUOTE_ALL)
+        writer = csv.writer(file, delimiter=',', quoting=csv.QUOTE_ALL)
 
         for task in employee_todo_list:
             writer.writerow([employee_id, employee_name,
