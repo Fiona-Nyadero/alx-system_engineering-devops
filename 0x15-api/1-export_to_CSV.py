@@ -66,8 +66,12 @@ def export_to_csv(employee_id, employee_name, employee_todo_list):
         writer = csv.writer(file, delimiter=',', quoting=csv.QUOTE_ALL)
 
         for task in employee_todo_list:
-            writer.writerow([employee_id, employee_name,
-                            str(task['completed']), task['title']])
+            writer.writerow([
+                str(employee_id),
+                employee_name,
+                str(task['completed']),
+                task['title']
+                ])
 
 
 if __name__ == "__main__":
