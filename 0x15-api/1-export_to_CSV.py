@@ -8,6 +8,7 @@ import requests
 import sys
 import csv
 
+
 def fetch_employee_data(employee_id):
     """ Method fetches employee data from REST API """
     id_api_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
@@ -65,7 +66,8 @@ def export_to_csv(employee_id, employee_name, employee_todo_list):
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
 
         for task in employee_todo_list:
-            writer.writerow([employee_id, employee_name, str(task['completed']), task['title']])
+            writer.writerow([employee_id, employee_name,
+                            str(task['completed']), task['title']])
 
 
 if __name__ == "__main__":
