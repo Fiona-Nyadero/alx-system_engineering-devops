@@ -7,7 +7,6 @@ to return TODO list progress
 import json
 import requests
 import sys
-import os
 
 
 def fetch_employee_data(employee_id):
