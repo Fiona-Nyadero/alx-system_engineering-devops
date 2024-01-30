@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-REST API for employee TODO list progress
+Script uses REST API for employee ID
+to return TODO list progress
 """
 
 import requests
@@ -45,8 +46,11 @@ def display_todo_progress(employee_name, employee_todo_list):
 
     all_tasks = len(employee_todo_list)
 
-    print(f"Employee {employee_name} is done with tasks\
-            ({complete_tasks}/{all_tasks}):")
+    res = (
+            f"Employee {employee_name} is done with tasks"
+            f"({complete_tasks}/{all_tasks}):"
+            )
+    print(res)
 
     for task in employee_todo_list:
         if task['completed']:
