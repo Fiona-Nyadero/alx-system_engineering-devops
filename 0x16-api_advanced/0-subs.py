@@ -14,14 +14,17 @@ def number_of_subscribers(subreddit):
     if subreddit is None or not isinstance(subreddit, str):
         return 0
 
+
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     headers = {"User-Agent": "My API Client"}
 
     resp = get(url, headers=headers)
 
-    if resp.status_code == 200:
-        data = resp.json()
-        subscribers = data["data"]["subscribers"]
+    res = resp.json()
+    
+    subscribers = data["data"]["subscribers"]
+    try:
         return subscribers
-    else:
+
+    except Exception:
         return 0
