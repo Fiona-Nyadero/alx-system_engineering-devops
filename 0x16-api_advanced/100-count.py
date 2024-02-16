@@ -13,9 +13,9 @@ def count_words(subreddit, word_list, after="", count=[]):
 
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     reqst = requests.get(url,
-                           params={'after': after},
-                           allow_redirects=False,
-                           headers={'user-agent': 'bhalut'})
+                         params={'after': after},
+                         allow_redirects=False,
+                         headers={'user-agent': 'bhalut'})
 
     if reqst.status_code == 200:
         data = reqst.json()
@@ -49,6 +49,7 @@ def count_words(subreddit, word_list, after="", count=[]):
 
             for keyword in range(len(word_list)):
                 if (count[keyword] > 0) and keyword not in save:
-                    print("{}: {}".format(word_list[keyword].lower(), count[keyword]))
+                    print("{}: {}".format(word_list[keyword].lower(),
+                          count[keyword]))
         else:
             count_words(subreddit, word_list, after, count)
