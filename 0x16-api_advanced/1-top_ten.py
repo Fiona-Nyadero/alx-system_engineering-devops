@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 Fetches top 10 hot posts for a subreddit
 """
@@ -10,19 +11,22 @@ def top_ten(subreddit):
     """
     Queries Reddit API for list of top 10 hot posts
     """
-    url = f"https://www.reddit.com/r/{subreddit}/hot/.json"
-    headers = {"User-Agent": "My API Client"}
-    params = {'limit': 10}
 
-    resp = get(url, headers=headers, params=params)
+    if subreddit is None or not isinstance(subreddit, str):
+        print("None")
 
-    if resp.status_code == 200:
-        data = resp.json()
-        hotPosts = data["data"]["children"]
+    header = {'User-agent': 'Google Chrome Version 81.0.4044.129'}
+    param = {'limit': 10}
+    url = 'https://www.reddit.com/r/{}/hot/.json'.format(subreddit)
 
-        for hotPost in hotPosts:
-            posttitle = hotPost["data"]["title"]
-            print(posttitle)
+    resp = get(url, headers=header, params=param)
+    res = resp.json()
 
-    else:
+    try:
+        hot_posts = res.get('data').get('children')
+
+        for hot_post in hot_posts:
+            print(hot_post.get('data').get('title'))
+
+    except Exception:
         print("None")
